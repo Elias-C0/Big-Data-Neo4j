@@ -4,6 +4,7 @@ import seaborn as sns
 import os
 import csv
 from collections import defaultdict, Counter
+from dotenv import load_dotenv
 
 def analyze_spotify_dataset(file_path, sample_size=1000, print_samples=5):
     """
@@ -109,5 +110,8 @@ def analyze_spotify_dataset(file_path, sample_size=1000, print_samples=5):
         print(f"No se pudo analizar con pandas: {str(e)}")
 
 # Ejecutar el análisis
-file_path = "spotify_dataset.csv"  # Cambia esto a la ruta correcta de tu archivo
+load_dotenv("Scripts/config.env")
+# Obtener las rutas desde las variables de entorno
+file_path = os.getenv("INPUT_FILE")
+
 analyze_spotify_dataset(file_path, sample_size=5000)
