@@ -1,24 +1,24 @@
 # Big-Data-Neo4j-Spotify
 
-# Pasos para configurar la conexión a la base de datos
+## Pasos para configurar la conexión a la base de datos
 
-1. Primero, crear un archivo llamado `config.env` en la carpeta etl con este formato:
+1. Primero, crear un archivo llamado `config.env` en la carpeta `Scripts` y pegar lo siguiente:
 
 ```
 # Archivo de entrada (ruta completa o relativa)
-INPUT_FILE=spotify_dataset.csv
+INPUT_FILE=./Scripts/spotify_dataset.csv
 
 # Archivo de salida (ruta completa o relativa)
-OUTPUT_FILE=spotify_clean.csv
+OUTPUT_FILE=./Scripts/spotify_clean.csv
 ```
 
-El archivo ya está en `.gitignore` por lo que no se va a subir.
+El archivo ya está en `.gitignore` por lo que va a ser ignorado.
 
 2. Instalá `pip install python-dotenv` y `pip install kagglehub`.
 
 3. Ejecutá `Decarga_archivo.py` y `Limpieza.py`.
 
-# Pasos para configurar Neo4j (Opcional)
+## Pasos para configurar Neo4j (Opcional)
 
 1. En caso de querer visualizar más de 300 nodos en Neo4j Browser, hay que cambiar el parametro de visualizacion de cypher:
 ```
