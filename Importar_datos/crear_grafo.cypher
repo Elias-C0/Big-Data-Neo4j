@@ -6,7 +6,7 @@ CREATE INDEX playlist_name_index IF NOT EXISTS FOR (p:Playlist) ON (p.name);
 
 // PASO 2: Cargar datos de muestra
 LOAD CSV WITH HEADERS FROM 'file:///spotify_clean.csv' AS row
-LIMIT 1000000
+// LIMIT 1000000
 WITH row
 WHERE row.user_id IS NOT NULL
   AND row.artistname IS NOT NULL
