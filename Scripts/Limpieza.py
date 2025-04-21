@@ -1,7 +1,17 @@
 import pandas as pd
+from dotenv import load_dotenv
+import os
+
+# Cargar las variables desde config.env
+load_dotenv("Scripts/config.env")
+
+# Obtener las rutas desde las variables de entorno
+input_file = os.getenv("INPUT_FILE")  # Ruta del archivo de entrada
+output_file = os.getenv("OUTPUT_FILE")  # Ruta del archivo de salida
+
 
 df_playlist = pd.read_csv(
-    "C:/Users/Elias/.Neo4jDesktop/relate-data/dbmss/dbms-d80e22ad-ccfd-4af9-b25b-7a0d123cddec/import/spotify_dataset.csv",
+    input_file,
     on_bad_lines="skip"  # Ignora líneas problemáticas
 )
 
@@ -11,7 +21,7 @@ df_playlist.columns = df_playlist.columns.str.replace(' ', '')
 df_playlist.columns
 
 df_playlist.to_csv(
-    "C:/Users/Elias/.Neo4jDesktop/relate-data/dbmss/dbms-d80e22ad-ccfd-4af9-b25b-7a0d123cddec/import/spotify_clean.csv",  # Ruta donde guardarás el archivo
+    output_file,
     index=False,  # Evita guardar el índice como una columna en el CSV
     sep=",",  # Especifica el delimitador, en este caso una coma
     encoding="utf-8"  # Asegura un correcto manejo de caracteres especiales
