@@ -20,9 +20,13 @@ df_playlist.columns = df_playlist.columns.str.replace('name', '')
 df_playlist.columns = df_playlist.columns.str.replace(' ', '')
 df_playlist.columns
 
+df_playlist['track'] = df_playlist['track'].str.replace(r'\s*[\'"“”]+\s*', ' ', regex=True)
+
 df_playlist.to_csv(
     output_file,
     index=False,  # Evita guardar el índice como una columna en el CSV
     sep=",",  # Especifica el delimitador, en este caso una coma
     encoding="utf-8"  # Asegura un correcto manejo de caracteres especiales
 )
+
+print("Archivo creado!!")
