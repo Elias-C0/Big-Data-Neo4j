@@ -35,3 +35,21 @@ dbms.memory.heap.max_size=3G
 
 dbms.memory.transaction.total.max=3G
 ```
+---
+
+## 👤 Autores
+* **Coradini Elias**  
+  - [LinkedIn](https://www.linkedin.com/in/c-elias-3a8065307/)  
+  - [Correo Electrónico](mailto:eliascoradini212@gmail.com)
+
+* **Escalante Axel**  
+  - [LinkedIn](https://www.linkedin.com/in/axelescalante0/)  
+  - [Correo Electrónico](mailto:axelescalante0@gmail.com)
+
+* **Milessi Ayrton**  
+  - [LinkedIn](https://www.linkedin.com/in/ayrton-milessi-90ab91327/)  
+  - [Correo Electrónico](mailto:ayrton4210@gmail.com)
+
+* **Starchevich Adriel**  
+  - [LinkedIn](https://www.linkedin.com/in/adriel-starchevich)  
+  - [Correo Electrónico](mailto:adrielstarchevich@gmail.com)
