@@ -16,7 +16,7 @@ El archivo ya está en `.gitignore` por lo que va a ser ignorado.
 
 2. Instalá `pip install python-dotenv` y `pip install kagglehub`.
 
-3. Ejecutá `Decarga_archivo.py` y `Limpieza.py`.
+3. Ejecutá `Descarga_archivo.py` y `Limpieza.py`.
 
 ## Pasos para configurar Neo4j (Opcional)
 
