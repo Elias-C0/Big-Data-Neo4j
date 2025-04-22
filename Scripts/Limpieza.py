@@ -16,11 +16,10 @@ df_playlist = pd.read_csv(
 )
 
 df_playlist.columns = df_playlist.columns.str.replace('"', '')
-df_playlist.columns = df_playlist.columns.str.replace('name', '')
 df_playlist.columns = df_playlist.columns.str.replace(' ', '')
 df_playlist.columns
 
-df_playlist['track'] = df_playlist['track'].str.replace(r'\s*[\'"“”]+\s*', ' ', regex=True)
+df_playlist['trackname'] = df_playlist['trackname'].str.replace(r'\s*[\'"“”]+\s*', ' ', regex=True)
 
 df_playlist.to_csv(
     output_file,
