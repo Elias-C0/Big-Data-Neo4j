@@ -1,10 +1,10 @@
-// PASO 1: Crear índices primero (MUY IMPORTANTE para rendimiento)
+// Creamos índices para mejorar el rendimiento
 CREATE INDEX user_id_index IF NOT EXISTS FOR (u:User) ON (u.id);
 CREATE INDEX artist_name_index IF NOT EXISTS FOR (a:Artist) ON (a.name);
 CREATE INDEX track_name_index IF NOT EXISTS FOR (t:Track) ON (t.name);
 CREATE INDEX playlist_name_index IF NOT EXISTS FOR (p:Playlist) ON (p.name);
 
-// PASO 2: Cargar datos de muestra
+// Carga de datos
 LOAD CSV WITH HEADERS FROM 'file:///spotify_clean.csv' AS row
 // LIMIT 1000000
 WITH row
@@ -18,17 +18,17 @@ WITH
   trim(row.trackname) AS trackname,
   trim(row.playlistname) AS playlistname
 
-// Crear usuario
+// Crea usuario
 MERGE (u:User {id: user_id})
 
-// Crear artista
+// Crea artista
 MERGE (a:Artist {name: artistname})
 
-// Crear track y relación con artista
+// Crea cancion y su relación con artista
 MERGE (t:Track {name: trackname})
 MERGE (t)-[:BY]->(a)
 
-// Crear playlist
+// Crea playlist y su relacion con usuario
 MERGE (p:Playlist {name: playlistname})
 MERGE (u)-[:CREATED]->(p)
 MERGE (p)-[:CONTAINS]->(t);
