@@ -1,55 +1,133 @@
-# Big-Data-Neo4j-Spotify
+<h1 align="center"> 🎧 Big Data con Neo4j & Spotify</h1>
 
-## Pasos para configurar la conexión a la base de datos
+> [!NOTE]
+> **Objetivo del proyecto:** Modelar y explorar datos musicales utilizando **Neo4j** como base de datos orientada a grafos.
+>
+> Este pipeline empieza con la descarga de datos desde **Kaggle**, seguida por un proceso de limpieza. Después, cargamos los datos en Neo4j y se establecen relaciones con consultas **Cypher**, para posteriormente, analizar las conexiones entre artistas, géneros y canciones.
+>
 
-1. Primero, crear un archivo llamado `config.env` en la carpeta `Scripts` y pegar lo siguiente:
+<h2 align="center">🛠 Tecnologías Utilizadas</h3>
 
-```
-# Archivo de entrada (ruta completa o relativa)
-INPUT_FILE=./Scripts/spotify_dataset.csv
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-Limpieza-blue?logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/Kaggle-Datasets-20BEFF?logo=kaggle&logoColor=white" />
+</p>
 
-# Archivo de salida (ruta completa o relativa)
-OUTPUT_FILE=./Scripts/spotify_clean.csv
-```
+<p align="center">
+  <img src="https://img.shields.io/badge/Neo4j-Base%20de%20Datos-008CC1?logo=neo4j&logoColor=green" />
+  <img src="https://img.shields.io/badge/Cypher-Consultas-00A86B?logo=codeforces&logoColor=white" />
+</p>
 
-El archivo ya está en `.gitignore` por lo que va a ser ignorado.
+<p align="center">
+  <img src="https://img.shields.io/badge/Spotify-Datos%20Musicales-1DB954?logo=spotify&logoColor=green" />
+</p>
 
-2. Instalá `pip install python-dotenv` y `pip install kagglehub`.
-
-3. Ejecutá `Descarga_archivo.py` y `Limpieza.py`.
-
-## Pasos para configurar Neo4j (Opcional)
-
-1. En caso de querer visualizar más de 300 nodos en Neo4j Browser, hay que cambiar el parametro de visualizacion de cypher:
-```
-Graph Visualization
-Initial Node Display 1000
-```
-
-2. Para poder cargar todos los nodos hay que cambiar los parámetros para asignar más memoria a Neo4j (hay que tener cuidado si no tenes mucha ram):
-
-```
-dbms.memory.heap.initial_size=2G
-
-dbms.memory.heap.max_size=3G
-
-dbms.memory.transaction.total.max=3G
-```
 ---
 
-## 👤 Autores
-* **Coradini Elias**  
-  - [LinkedIn](https://www.linkedin.com/in/c-elias-3a8065307/)  
-  - [Correo Electrónico](mailto:eliascoradini212@gmail.com)
+<details>
 
-* **Escalante Axel**  
-  - [LinkedIn](https://www.linkedin.com/in/axelescalante0/)  
-  - [Correo Electrónico](mailto:axelescalante0@gmail.com)
+  <summary>⚙️ Pasos para configurar la conexión a la base de datos</summary>
 
-* **Milessi Ayrton**  
-  - [LinkedIn](https://www.linkedin.com/in/ayrton-milessi-90ab91327/)  
-  - [Correo Electrónico](mailto:ayrton4210@gmail.com)
+  1. Crear un archivo llamado config.env dentro de la carpeta Scripts y pegar lo siguiente:
+  
+  
+```env
+  # Archivo de entrada (ruta completa o relativa)
+  INPUT_FILE=./Scripts/spotify_dataset.csv
+  
+  # Archivo de salida (ruta completa o relativa)
+  OUTPUT_FILE=./Scripts/spotify_clean.csv
+```
 
-* **Starchevich Adriel**  
-  - [LinkedIn](https://www.linkedin.com/in/adriel-starchevich)  
-  - [Correo Electrónico](mailto:adrielstarchevich@gmail.com)
+  > ℹ️ **Nota:** Este archivo ya está incluido en .gitignore, por lo tanto no se subirá al repositorio.
+
+  2. Instalar las librerías necesarias:
+  
+  
+```bash
+  pip install python-dotenv
+  pip install kagglehub
+```
+  
+  3. Ejecutar los scripts en orden:
+  
+```bash
+  python Descarga_archivo.py
+  python Limpieza.py
+```
+</details>
+
+---
+
+<details> <summary> 🧠 Configuración de Neo4j (opcional) </summary>
+  
+Si querés visualizar más de 300 nodos es importante que se configure en el Browser de Neo4j:
+
+1. Aumentá el límite de nodos visibles en el Browser de Neo4j:
+
+```Browser Settings
+Graph Visualization
+Initial Node Display: 1000
+```
+
+2. Asigná más memoria a Neo4j para cargar grandes volúmenes de datos (con precaución si tenés poca RAM):
+
+```Settings
+dbms.memory.heap.initial_size=2G
+dbms.memory.heap.max_size=3G
+dbms.memory.transaction.total.max=3G
+```
+
+> ⚠️ **Importante:**
+>Estos valores son recomendados para equipos con al menos 8GB de RAM. Si tenés menos, ajustalos con cuidado.
+
+</details>
+
+---
+<div align="center">
+<h2 align="center">👨‍💻 Autores</h2>
+<p align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <a href="https://www.linkedin.com/in/c-elias-3a8065307/" target="_blank">
+          <img src="https://avatars.githubusercontent.com/u/141202551" width="80" height="80" /><br>
+          <img src="https://img.shields.io/badge/LinkedIn-Coradini%20Elias-0A66C2?style=sociale&logo=linkedin" />
+        </a>
+      </td>
+      <td align="center">
+        <a href="https://www.linkedin.com/in/axelescalante0/" target="_blank">
+          <img src="https://avatars.githubusercontent.com/u/141271318" width="80" height="80" /><br>
+          <img src="https://img.shields.io/badge/LinkedIn-Escalante%20Axel-0A66C2?style=sociale&logo=linkedin" />
+        </a>
+      </td>
+      <td align="center">
+        <a href="https://www.linkedin.com/in/ayrton-milessi-90ab91327/" target="_blank">
+          <img src="https://avatars.githubusercontent.com/u/141248568?s=80" width="80" height="80" /><br>
+          <img src="https://img.shields.io/badge/LinkedIn-Milessi%20Ayrton-0A66C2?style=sociale&logo=linkedin" />
+        </a>
+      </td>
+      <td align="center">
+        <a href="https://www.linkedin.com/in/adriel-starchevich" target="_blank">
+          <img src="https://avatars.githubusercontent.com/u/102241028?s=80" width="80" height="80" /><br>
+          <img src="https://img.shields.io/badge/LinkedIn-Starchevich%20Adriel-0A66C2?style=sociale&logo=linkedin" />
+        </a>
+      </td>
+    </tr>
+  </table>
+</p>
+</div>
+
+
+---
+
+
+>[!NOTE]
+>
+>En esta imagen están representados solo 10.000 nodos
+<details>
+  <summary> 🌌 Visualización del grafo  </summary>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Elias-C0/Big-Data-Neo4j/main/graph.svg" width="800px" alt="Graph" />
+</p>
+</details>
