@@ -1,7 +1,7 @@
 <h1 align="center"> 🎧 Big Data con Neo4j & Spotify</h1>
 
 > [!NOTE]
-> **Objetivo del proyecto:** Modelar y explorar datos musicales utilizando **Neo4j** como base de datos orientada a grafos.
+> **Objetivo del proyecto:** Modelar y explorar datos musicales utilizando **Neo4j** como base de datos orientadas a grafos.
 >
 > Este pipeline empieza con la descarga de datos desde **Kaggle**, seguida por un proceso de limpieza. Después, cargamos los datos en Neo4j y se establecen relaciones con consultas **Cypher**, para posteriormente, analizar las conexiones entre artistas, géneros y canciones.
 >
@@ -124,7 +124,7 @@ dbms.memory.transaction.total.max=3G
 
 >[!NOTE]
 >
->En esta imagen están representados solo 10.000 nodos
+>En esta imagen están representados solo 10.000 filas
 <details>
   <summary> 🌌 Visualización del grafo  </summary>
 <p align="center">
